@@ -73,7 +73,7 @@
 }
 
 % Author
-\author{\href{mailto:tmag1g21@soton.ac.uk}{Toby Godfrey}}
+\author{Toby Godfrey\\\href{mailto:tmag1g21@soton.ac.uk}{tmag1g21@soton.ac.uk}}
 
 % Header & footer
 \pagestyle{fancy}
