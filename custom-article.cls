@@ -33,7 +33,7 @@
 \RequirePackage{sectsty} % Allows the the section style commands below
 
 % Links
-\RequirePackage[colorlinks=true]{hyperref}
+\RequirePackage{hyperref}
 
 % Better references - use \cref
 \RequirePackage{cleveref}
@@ -45,7 +45,7 @@
 \RequirePackage{fancyvrb}
 
 % Colours
-\RequirePackage{xcolor}
+\RequirePackage[dvipsnames]{xcolor}
 
 % Drawings
 \RequirePackage{tikz}
@@ -63,6 +63,14 @@
 \subsectionfont{\normalsize\centering}
 \subsubsectionfont{\normalsize\centering}
 \paragraphfont{\normalsize}
+
+% Link colours
+\hypersetup{
+  linkcolor  = violet,
+  citecolor  = YellowOrange,
+  urlcolor   = Aquamarine,
+  colorlinks = true,
+}
 
 % Author
 \author{Toby Godfrey}
