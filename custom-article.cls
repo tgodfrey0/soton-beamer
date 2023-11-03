@@ -56,7 +56,7 @@
 
 %%% New commands %%%
 \renewcommand{\thesection}{\Roman{section}} 
-\renewcommand{\thesubsection}{\thesection.\roman{subsection}}
+\renewcommand{\thesubsection}{\thesection/\roman{subsection}}
 
 %%% Page styling %%%
 % Section styles 
