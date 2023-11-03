@@ -28,6 +28,7 @@
 \RequirePackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
+\RequirePackage{microtype}
 
 % Section style
 \RequirePackage{sectsty} % Allows the the section style commands below
