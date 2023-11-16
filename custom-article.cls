@@ -30,6 +30,9 @@
 \RequirePackage{lastpage}
 \RequirePackage{microtype}
 
+% Maths
+\RequirePackage{amsmath}
+
 % Section style
 \RequirePackage{sectsty} % Allows the the section style commands below
 
@@ -55,7 +58,7 @@
 \RequirePackage{siunitx}
 
 % For ToC spacing
-\usepackage{tocloft}
+\RequirePackage{tocloft}
 
 %%% New commands %%%
 \renewcommand{\thesection}{\Roman{section}} 
