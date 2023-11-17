@@ -60,6 +60,9 @@
 % For ToC spacing
 \RequirePackage{tocloft}
 
+% For SVGs
+\RequirePackage{svg}
+
 %%% New commands %%%
 \renewcommand{\thesection}{\Roman{section}} 
 \renewcommand{\thesubsection}{\thesection/\roman{subsection}}
