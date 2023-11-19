@@ -63,18 +63,18 @@
 % For SVGs
 \RequirePackage{svg}
 
-%%% New commands %%%
-\renewcommand{\thesection}{\Roman{section}} 
-\renewcommand{\thesubsection}{\thesection/\roman{subsection}}
-\renewcommand{\thesubsubsection}{\thesubsection/\roman{subsubsection}}
+%%% Section headings %%%
+% \renewcommand{\thesection}{\Roman{section}} 
+% \renewcommand{\thesubsection}{\thesection/\roman{subsection}}
+% \renewcommand{\thesubsubsection}{\thesubsection/\roman{subsubsection}}
 
 %%% Page styling %%%
 % ToC Spacing
-\advance\cftsecnumwidth 0.5em\relax
-\advance\cftsubsecindent 0.2em\relax
-\advance\cftsubsecnumwidth 0.5em\relax
-\advance\cftsubsubsecindent 0.2em\relax
-\advance\cftsubsubsecnumwidth 0.5em\relax
+% \advance\cftsecnumwidth 1em\relax
+% \advance\cftsubsecindent 0.2em\relax
+% \advance\cftsubsecnumwidth 1em\relax
+% \advance\cftsubsubsecindent 0.2em\relax
+% \advance\cftsubsubsecnumwidth 1em\relax
 
 
 % Section styles 
