@@ -78,7 +78,7 @@
 
 
 % Section styles 
-\sectionfont{\normalsize\centering}
+\sectionfont{\large\centering}
 \subsectionfont{\normalsize\centering}
 \subsubsectionfont{\normalsize\centering}
 \paragraphfont{\normalsize}
