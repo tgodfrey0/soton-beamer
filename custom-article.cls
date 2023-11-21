@@ -29,6 +29,8 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{microtype}
+\RequirePackage{subcaption}
+\RequirePackage{graphicx}
 
 % Maths
 \RequirePackage{amsmath}
