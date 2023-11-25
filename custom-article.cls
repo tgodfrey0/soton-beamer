@@ -32,6 +32,9 @@
 \RequirePackage{subcaption}
 \RequirePackage{graphicx}
 
+% Tables
+\RequirePackage{tabularx}
+
 % Maths
 \RequirePackage{amsmath}
 
