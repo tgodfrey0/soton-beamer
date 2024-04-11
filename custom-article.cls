@@ -30,6 +30,7 @@
 \RequirePackage{lastpage}
 \RequirePackage{microtype}
 \RequirePackage{subcaption}
+\RequirePackage{subfig}
 \RequirePackage{graphicx}
 
 % Tables
@@ -83,10 +84,10 @@
 
 
 % Section styles 
-\sectionfont{\large\centering}
-\subsectionfont{\normalsize\centering}
-\subsubsectionfont{\normalsize\centering}
-\paragraphfont{\normalsize}
+% \sectionfont{\large\centering}
+% \subsectionfont{\normalsize\centering}
+% \subsubsectionfont{\normalsize\centering}
+% \paragraphfont{\normalsize}
 
 % Link colours
 \hypersetup{
