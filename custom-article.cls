@@ -30,7 +30,6 @@
 \RequirePackage{lastpage}
 \RequirePackage{microtype}
 \RequirePackage{subcaption}
-\RequirePackage{subfig}
 \RequirePackage{graphicx}
 
 % Tables
