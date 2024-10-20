@@ -37,6 +37,7 @@
 
 % Maths
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
 
 % Section style
 \RequirePackage{sectsty} % Allows the the section style commands below
