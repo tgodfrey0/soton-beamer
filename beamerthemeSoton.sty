@@ -221,16 +221,31 @@
 \makeatother
 
 \AtBeginSection{\frame{\sectionpage}} % section pages
+% \setbeamertemplate{section page}
+% {
+% 	\begin{tikzpicture}
+% 		% set up the entire slide as the canvas
+% 		\useasboundingbox (0,0) rectangle(\slidewidth,\slideheight);
+% 		\fill[color=PrimaryColor] (0cm, 0cm) rectangle (\slidewidth, \slideheight);
+% 		\fill[color=BackgroundColor] (0cm, 0.5\slideheight-1cm) rectangle(\slidewidth, 0.5\slideheight+1cm);
+% 		\node[text width=\the\paperwidth-1cm,align=center] at (0.4\slidewidth, 0.5\slideheight)                   {\color{PrimaryColor}\Huge\textbf{\insertsection}};
+% 	\end{tikzpicture}
+% }
+
+\makeatletter
 \setbeamertemplate{section page}
 {
-	\begin{tikzpicture}
-		% set up the entire slide as the canvas
-		\useasboundingbox (0,0) rectangle(\slidewidth,\slideheight);
-		\fill[color=PrimaryColor] (0cm, 0cm) rectangle (\slidewidth, \slideheight);
-		\fill[color=BackgroundColor] (0cm, 0.5\slideheight-1cm) rectangle(\slidewidth, 0.5\slideheight+1cm);
-		\node[text width=\the\paperwidth-1cm,align=center] at (0.4\slidewidth, 0.5\slideheight)                   {\color{PrimaryColor}\Huge\textbf{\insertsection}};
-	\end{tikzpicture}
+    \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,sep=0pt]{section page}
+        \begin{tikzpicture}
+            \useasboundingbox[fill=PrimaryColor] (0,0) rectangle (\paperwidth,\paperheight);
+            \fill[BackgroundColor] (0, 0.5\paperheight-1cm) rectangle(\paperwidth, 0.5\paperheight+1cm);
+            \node[text width=\paperwidth-2cm,align=center] at (0.5\paperwidth, 0.5\paperheight) 
+                 {\color{PrimaryColor}\Huge\textbf{\insertsection}};
+        \end{tikzpicture}
+    \end{beamercolorbox}
 }
+\makeatother
+
 
 % -------- CONTINUED FRAMES TITLE STYLE --------
 % Make the roman numerals the same colour as the text
