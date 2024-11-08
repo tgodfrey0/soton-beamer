@@ -1,0 +1,6 @@
+*
+!.gitignore
+!beamerthemeSoton.sty
+!custom-article.cls
+!beamer-example/
+!beamer-example/*
