@@ -1,14 +1,11 @@
 % Based on the Lucid Beamer scheme from https://github.com/harisont/lucid
 
 \usepackage{tikz}
+\usepackage{xcolor}
 \usetikzlibrary{calc}
 
-\usepackage{sourcesanspro}
-
-% TODO
-% - Top left, top centre and top right logos on the title page
-% - Set colour with arg
-% - Auto calc other colours
+% \usepackage{sourcesanspro}
+\usepackage{helvet}
 
 
 % -------- LOGO SETUP --------
@@ -16,20 +13,35 @@
 \newif\iflogoset
 \logosetfalse
 
-\newif\iftitlelogoset
-\titlelogosetfalse
+\newif\iftitlelogorightset
+\titlelogorightsetfalse
 
-\newcommand{\setlogo}[1]{%
+\newif\iftitlelogocentreset
+\titlelogocentresetfalse
+
+\newif\iftitlelogoleftset
+\titlelogoleftsetfalse
+
+\newcommand{\setLogo}[1]{%
     \def\insertlogo{#1}%
     \logosettrue
 }
 
-\newcommand{\settitlelogo}[1]{%
-  \def\inserttitlelogo{#1}%
-  \titlelogosettrue
+\newcommand{\setTitleLogoRight}[1]{%
+  \def\inserttitlelogoright{#1}%
+  \titlelogorightsettrue
 }
 
-\titlegraphic{\includegraphics[height=4cm, width=4cm, keepaspectratio]{\inserttitlelogo}}
+\newcommand{\setTitleLogoCentre}[1]{%
+  \def\inserttitlelogocentre{#1}%
+  \titlelogocentresettrue
+}
+
+\newcommand{\setTitleLogoLeft}[1]{%
+  \def\inserttitlelogoleft{#1}%
+  \titlelogoleftsettrue
+}
+
 
 % -------- TITLE BAR HEIGHT --------
 
@@ -37,6 +49,7 @@
 \setlength{\titlebarheight}{1cm}
 
 % -------- COLOR SCHEME --------
+
 \definecolor{PrimaryColor}{RGB}{0,85,127} % primary color (blue)
 \definecolor{SecondaryColor}{RGB}{0,85,127} % bulleted lists
 \definecolor{BackgroundColor}{RGB}{255,255,255} % background & titles (white)
@@ -44,6 +57,17 @@
 \definecolor{ProgBarBGColor}{RGB}{175,175,175} % progress bar background (grey)
 \definecolor{AlertColor}{RGB}{127, 0, 85}
 \definecolor{ExampleColor}{RGB}{85, 127, 0}
+
+\newcommand{\setColourScheme}[3]{
+  \definecolor{PrimaryColor}{RGB}{#1,#2,#3}
+  \definecolor{SecondaryColor}{RGB}{#1, #2, #3}
+  \definecolor{AlertColor}{RGB}{#3,#1,#2}
+  \definecolor{ExampleColor}{RGB}{#2,#1,#3}
+}
+
+\colorlet{BackgroundColor}{white}
+\colorlet{TextColor}{black}
+\colorlet{ProgBarBGColor}{gray!75}
 
 % set colours
 \setbeamercolor{normal text}{fg=TextColor}\usebeamercolor*{normal text}
@@ -161,16 +185,30 @@
                 % primary color rectangle
                 \fill[color=PrimaryColor] (0, 4cm) rectangle(\slidewidth,\slideheight);
                 
-                % title graphic
-                \iftitlelogoset
+								% title graphic left
+                \iftitlelogoleftset
+                    \node[anchor=north west, inner sep=0] at (0.25cm,\slideheight-0.25cm) {
+											\includegraphics[height=2cm, width=2cm, keepaspectratio]{\inserttitlelogoleft}
+                    };
+                \fi
+
+								% title graphic centre
+                \iftitlelogocentreset
+                    \node[anchor=north, inner sep=0] at (0.5\slidewidth,\slideheight-0.25cm) {
+											\includegraphics[height=2cm, width=2cm, keepaspectratio]{\inserttitlelogocentre}
+                    };
+                \fi
+
+                % title graphic right
+                \iftitlelogorightset
                     \node[anchor=north east, inner sep=0] at (\slidewidth-0.25cm,\slideheight-0.25cm) {
-                      \inserttitlegraphic
+											\includegraphics[height=2cm, width=2cm, keepaspectratio]{\inserttitlelogoright}
                     };
                 \fi
                 
                 % text (title, subtitle, author, date)
                 \node[anchor=south,text width=\slidewidth-1cm,inner xsep=0.5cm] at (0.5\slidewidth,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
-                \node[anchor=north east,text width=\slidewidth-1cm,align=right] at (\slidewidth-0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
+                \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
                 \node at (0.5\slidewidth,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
                 \node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\Large\insertinstitute};
                 \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertdate};

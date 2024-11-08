@@ -1,0 +1,53 @@
+\documentclass[10pt, aspectratio = 169]{beamer}
+
+% Theme choice
+\usetheme{Soton}
+\usecolortheme{default}
+
+% Title page information
+\title{Simple Beamer Presentation}
+\subtitle{Subtitle test}
+\author{Your Name}
+\institute{Your Institution}
+\date{\today}
+
+\setTitleLogoRight{1.pdf}
+\setTitleLogoCentre{2.pdf}
+\setTitleLogoLeft{3.pdf}
+\setLogo{4.pdf}
+% \setColourScheme{50}{85}{234}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Outline slide
+\begin{frame}
+    \frametitle{Outline}
+    \tableofcontents
+\end{frame}
+
+% Content slide 1
+\section{First Section}
+\begin{frame}
+    \frametitle{Introduction}
+    \begin{itemize}
+        \item This is the first point
+        \item Here's the second point
+        \item And a third point
+    \end{itemize}
+\end{frame}
+
+% Content slide 2
+\section{Second Section}
+\begin{frame}
+    \frametitle{Some Math}
+    The quadratic formula is:
+    \[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+    Where $ax^2 + bx + c = 0$
+\end{frame}
+
+\end{document}
