@@ -185,24 +185,24 @@
                 % primary color rectangle
                 \fill[color=PrimaryColor] (0, 4cm) rectangle(\slidewidth,\slideheight);
                 
-								% title graphic left
+			% title graphic left
                 \iftitlelogoleftset
                     \node[anchor=north west, inner sep=0] at (0.25cm,\slideheight-0.25cm) {
-											\includegraphics[height=2cm, width=2cm, keepaspectratio]{\inserttitlelogoleft}
+					\includegraphics[height=2cm, width=4cm, keepaspectratio]{\inserttitlelogoleft}
                     };
                 \fi
 
-								% title graphic centre
+			% title graphic centre
                 \iftitlelogocentreset
                     \node[anchor=north, inner sep=0] at (0.5\slidewidth,\slideheight-0.25cm) {
-											\includegraphics[height=2cm, width=2cm, keepaspectratio]{\inserttitlelogocentre}
+					\includegraphics[height=2cm, width=4cm, keepaspectratio]{\inserttitlelogocentre}
                     };
                 \fi
 
                 % title graphic right
                 \iftitlelogorightset
                     \node[anchor=north east, inner sep=0] at (\slidewidth-0.25cm,\slideheight-0.25cm) {
-											\includegraphics[height=2cm, width=2cm, keepaspectratio]{\inserttitlelogoright}
+					\includegraphics[height=2cm, width=4cm, keepaspectratio]{\inserttitlelogoright}
                     };
                 \fi
                 
@@ -324,3 +324,13 @@
 
 \setbeamercolor{caption name}{fg=PrimaryColor}
 % \setbeamertemplate{caption}[numbered]
+
+% -------- PROGRESS BAR AND PAGE NUMBERS COMMANDS --------
+\newcommand{\setProgressBarOff}{%
+    \setcounter{showProgressBar}{0}
+}
+
+\newcommand{\setFrameNumbersOff}{%
+    \setcounter{showSlideNumbers}{0}
+}
+

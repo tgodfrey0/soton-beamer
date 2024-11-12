@@ -38,6 +38,15 @@ To add larger images to the title slide
 \setTitleLogoLeft{img3.pdf}
 ```
 
+### Footer
+
+The progress bar and the page numbers can be easily disabled in your presentation
+
+```latex
+\setProgressBarOff
+\setFrameNumbersOff
+```
+
 ## Minimum Working Example
 
 An example can be seen in the `beamer-example` directory
