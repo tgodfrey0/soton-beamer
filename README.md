@@ -1,6 +1,6 @@
 # Soton Beamer Style
 
-A modern Beamer theme with simple customisation.
+A modern Beamer theme with simple customisation and simple dependencies.
 
 ## Usage
 
