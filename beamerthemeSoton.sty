@@ -42,6 +42,15 @@
   \titlelogoleftsettrue
 }
 
+% -------- SUPERVISOR --------
+
+\newif\ifsupervisordefined
+\supervisordefinedfalse
+
+\newcommand{\supervisor}[1]{%
+  \def\insertsupervisor{#1}%
+  \supervisordefinedtrue
+}
 
 % -------- TITLE BAR HEIGHT --------
 
@@ -207,11 +216,29 @@
                 \fi
                 
                 % text (title, subtitle, author, date)
-                \node[anchor=south,text width=\slidewidth-1cm,inner xsep=0.5cm] at (0.5\slidewidth,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
-                \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
-                \node at (0.5\slidewidth,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
-                \node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\Large\insertinstitute};
-                \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\tiny\insertdate};
+                % \node[anchor=south,text width=\slidewidth-1cm,inner xsep=0.5cm] at (0.5\slidewidth,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
+                % \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (0.4cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
+                % \node at (0.5\slidewidth,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
+                % \node at (0.5\slidewidth,1.25cm) {\color{PrimaryColor}\Large\insertinstitute};
+                \node[anchor=south west,text width=\slidewidth-1cm] at (0.5cm,4cm) {\color{BackgroundColor}\Huge\textbf{\inserttitle}};
+                
+                \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (0.5cm,4cm) {\color{PrimaryColor}\large\textbf{\insertsubtitle}};
+                
+                % \node[anchor=west] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
+
+                \ifsupervisordefined
+                  \node[anchor=west] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
+                  \node[anchor=west] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertsupervisor};
+                  \node[anchor=west] at (0.5cm,0.75cm) {\color{PrimaryColor}\large\insertinstitute};
+                \else
+                  \node[anchor=west] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
+                  \node[anchor=west] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertinstitute};
+                \fi
+                
+                
+                
+                \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\small\insertdate};
+                
 		\else % other slides
 			% title bar
                 \fill[color=PrimaryColor] (0, \slideheight-\titlebarheight) rectangle(\slidewidth,\slideheight);
