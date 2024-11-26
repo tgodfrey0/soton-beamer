@@ -8,6 +8,14 @@ Simply copy `beamerthemeSoton.sty` into your project directory and then use `\us
 
 ## Customisation
 
+### Supervisor
+
+An additional `supervisor` field can be added below the `author` on the title page.
+
+```latex
+\supervisor{Supervised by myself}
+```
+
 ### Colours
 
 The colour theme defaults to that of the [University of Southampton](https://southampton.ac.uk).
