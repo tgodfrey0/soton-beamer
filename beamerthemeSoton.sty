@@ -250,6 +250,8 @@
                     };
                 \fi
 
+                
+
 			% show progress bar
 			\ifnum \value{showProgressBar}>0\relax%
 				% progress bar icon in the middle of the screen
@@ -288,16 +290,6 @@
 \makeatother
 
 \AtBeginSection{\frame{\sectionpage}} % section pages
-% \setbeamertemplate{section page}
-% {
-% 	\begin{tikzpicture}
-% 		% set up the entire slide as the canvas
-% 		\useasboundingbox (0,0) rectangle(\slidewidth,\slideheight);
-% 		\fill[color=PrimaryColor] (0cm, 0cm) rectangle (\slidewidth, \slideheight);
-% 		\fill[color=BackgroundColor] (0cm, 0.5\slideheight-1cm) rectangle(\slidewidth, 0.5\slideheight+1cm);
-% 		\node[text width=\the\paperwidth-1cm,align=center] at (0.4\slidewidth, 0.5\slideheight)                   {\color{PrimaryColor}\Huge\textbf{\insertsection}};
-% 	\end{tikzpicture}
-% }
 
 \makeatletter
 \setbeamertemplate{section page}
@@ -357,3 +349,7 @@
     \setcounter{showSlideNumbers}{0}
 }
 
+% -------- FIX TEXT OVER PROGRESS BAR --------
+\addtobeamertemplate{footline}{}{%
+  \vspace{0.5cm}
+}
