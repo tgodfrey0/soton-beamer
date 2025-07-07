@@ -49,9 +49,16 @@
 \newif\ifsupervisordefined
 \supervisordefinedfalse
 
-\newcommand{\supervisor}[1]{%
-  \def\insertsupervisor{#1}%
-  \supervisordefinedtrue
+\newcommand{\supervisorspretext}{} % Define an empty command for the pre-text
+
+\newcommand{\supervisors}[2][]{%
+    \def\insertsupervisors{#2}%
+    \if\relax#1\relax % Check if optional argument is empty
+        \def\supervisorspretext{}%
+    \else
+        \def\supervisorspretext{#1\ }% % Add a space after the pre-text
+    \fi
+    \supervisordefinedtrue
 }
 
 % -------- TITLE BAR HEIGHT --------
@@ -225,16 +232,20 @@
                 % \node[anchor=west] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
 
                 \ifsupervisordefined
-                  \node[anchor=west] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
-                  \node[anchor=west] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertsupervisor};
-                  \node[anchor=west] at (0.5cm,0.75cm) {\color{PrimaryColor}\large\insertinstitute};
+                    \node[anchor=west,text width=\slidewidth-1cm,align=left] at (0.5cm,3cm) {\color{PrimaryColor}\LARGE\insertauthor};
+                
+                    % Node for supervisors, using a named coordinate to help with positioning the institute
+                    \node[anchor=west,text width=\slidewidth-1cm,align=left] (supervisors_node) at (0.5cm,2cm) {%
+                        \color{PrimaryColor}\large\supervisorspretext\insertsupervisors%
+                    };
+                
+                    % Institution positioned below the supervisors node, with a vertical offset
+                    \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (supervisors_node.south west) [yshift=-0.25cm] {\color{PrimaryColor}\large\insertinstitute}; % Added yshift
                 \else
-                  \node[anchor=west] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
-                  \node[anchor=west] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertinstitute};
+                    \node[anchor=west,text width=\slidewidth-1cm,align=left] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
+                    \node[anchor=west,text width=\slidewidth-1cm,align=left] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertinstitute};
                 \fi
-                
-                
-                
+               
                 \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\small\insertdate};
                 
 		\else % other slides

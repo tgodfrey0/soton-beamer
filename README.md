@@ -10,11 +10,13 @@ Simply copy `beamerthemeSoton.sty` into your project directory and then use `\us
 
 ### Supervisor
 
-An additional `supervisor` field can be added below the `author` on the title page.
+An additional `supervisors` field can be added below the `author` on the title page.
 
 ```latex
-\supervisor{Supervised by myself}
+\supervisors[Pre-Text]{Supervisor 1, Supervisor 2, etc.}
 ```
+
+This then produces a label with the pre-text followed by the supervisor(s). E.g. `\supervisors[Supervised by]{Dr A Beta, Dr G Delta, \& Dr E Zeta}` would produce "Supervised by Dr A Beta, Dr G Delta, & Dr E Zeta".
 
 ### Colours
 
