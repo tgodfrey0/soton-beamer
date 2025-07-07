@@ -240,13 +240,15 @@
                     };
                 
                     % Institution positioned below the supervisors node, with a vertical offset
-                    \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (supervisors_node.south west) [yshift=-0.25cm] {\color{PrimaryColor}\large\insertinstitute}; % Added yshift
+                    % \node[anchor=north west,text width=\slidewidth-1cm,align=left] at (supervisors_node.south west) [yshift=-0.25cm] {\color{PrimaryColor}\large\insertinstitute}; % Added yshift
                 \else
                     \node[anchor=west,text width=\slidewidth-1cm,align=left] at (0.5cm,2cm) {\color{PrimaryColor}\LARGE\insertauthor};
-                    \node[anchor=west,text width=\slidewidth-1cm,align=left] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertinstitute};
+                    % \node[anchor=west,text width=\slidewidth-1cm,align=left] at (0.5cm,1.25cm) {\color{PrimaryColor}\large\insertinstitute};
                 \fi
+
+                \node[anchor=south west] at (0cm,0cm) {\color{PrimaryColor}\insertinstitute};
                
-                \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\small\insertdate};
+                \node[anchor=south east] at(\slidewidth,0cm) {\color{PrimaryColor}\insertdate};
                 
 		\else % other slides
 			% title bar
